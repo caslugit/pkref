@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="PK Referência World — tênis originais, lançamentos e atendimento direto.">
+<title>PK Referência World | Tênis</title>
+<style>
+:root {
+  --bg: #d9dbdf;
+  --surface: #f1f2f4;
+  --section: #c9ccd1;
+  --ink: #1d1d1f;
+  --muted: #6e6e73;
+  --line: rgba(29, 29, 31, .12);
+  --accent: #0071e3;
+  --radius: 28px;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --scroll-progress: 0;
+  --bg-shift: 0px;
+  --bg-rotate: 0deg;
+  --hero-shift: 0px;
+  color-scheme: light;
+  box-sizing: border-box;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body { position: relative; isolation: isolate; margin: 0; background: #d7d9dd; color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.47; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; z-index: 0; inset: -28vmax; pointer-events: none; background: radial-gradient(circle at 28% 25%, rgba(255,255,255,.94) 0, rgba(255,255,255,0) 24%), radial-gradient(circle at 72% 58%, rgba(126,132,143,.34) 0, rgba(126,132,143,0) 28%), radial-gradient(circle at 38% 82%, rgba(238,240,244,.86) 0, rgba(238,240,244,0) 24%), conic-gradient(from 210deg at 50% 50%, #c7c9ce, #e4e5e8, #bdc0c6, #dfe1e4, #c7c9ce); transform: translate3d(0, var(--bg-shift), 0) rotate(var(--bg-rotate)); transform-origin: 50% 50%; will-change: transform; }
+main, footer { position: relative; z-index: 1; }
+.scroll-progress { position: fixed; z-index: 40; top: 0; left: 0; width: 100%; height: 3px; pointer-events: none; background: linear-gradient(90deg, #fff, var(--accent)); transform: scaleX(var(--scroll-progress)); transform-origin: left; box-shadow: 0 0 16px rgba(0,113,227,.5); }
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.wrap { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+
+/* Navegação */
+header { position: sticky; top: 0; z-index: 20; background: rgba(221, 223, 227, .82); backdrop-filter: saturate(160%) blur(20px); border-bottom: 1px solid rgba(0, 0, 0, .1); }
+.barra { height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.marca { font-size: 16px; font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
+.marca span { color: var(--muted); font-weight: 500; }
+nav { display: flex; align-items: center; gap: 30px; }
+nav a { color: #424245; font-size: 13px; font-weight: 500; text-decoration: none; transition: color .2s; }
+nav a:hover { color: #000; }
+
+/* Hero */
+.hero { --light-x: 50%; --light-y: 28%; --shoe-x: 0px; --shoe-y: 0px; position: relative; min-height: calc(100svh - 64px); overflow: hidden; background: #000; color: #fff; display: grid; align-items: center; text-align: center; padding: 84px 0 64px; }
+.hero::before { content: ""; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: radial-gradient(circle 320px at var(--light-x) var(--light-y), rgba(255,255,255,.28), rgba(255,255,255,.07) 38%, transparent 72%), radial-gradient(circle 520px at var(--light-x) var(--light-y), rgba(0,113,227,.12), transparent 72%); filter: blur(5px); will-change: background; }
+.hero::after { content: ""; position: absolute; z-index: 0; inset: 0; pointer-events: none; opacity: .38; background: linear-gradient(115deg, transparent 18%, rgba(255,255,255,.05) 35%, transparent 52%); transform: translateY(var(--hero-shift)); will-change: transform; }
+.hero .conteudo { position: relative; z-index: 2; }
+.eyebrow { margin: 0 0 20px; color: #a1a1a6; font-size: 15px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.hero h1 { margin: 0; font-size: clamp(64px, 12vw, 152px); line-height: .88; letter-spacing: -.075em; font-weight: 700; text-shadow: 0 0 42px rgba(255,255,255,.05); }
+.hero h1 span { display: block; color: #8f8f94; }
+.hero .sub { max-width: 600px; margin: 32px auto 0; color: #a1a1a6; font-size: clamp(20px, 2.4vw, 28px); line-height: 1.25; letter-spacing: -.025em; }
+.botoes { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 38px; }
+.btn { display: inline-flex; justify-content: center; align-items: center; min-height: 48px; padding: 12px 24px; border: 1px solid transparent; border-radius: 999px; background: var(--accent); color: #fff; font-size: 16px; font-weight: 600; text-decoration: none; transition: transform .2s, background .2s; }
+.btn:hover { background: #0077ed; transform: translateY(-1px); }
+.btn.vazado { border-color: #86868b; background: transparent; color: #fff; }
+.btn.vazado:hover { border-color: #fff; background: #fff; color: #000; }
+.hero-art { position: relative; z-index: 1; width: min(920px, 92vw); margin: 42px auto -13%; color: rgba(255,255,255,.9); filter: drop-shadow(0 30px 55px rgba(0,0,0,.8)); transform: translate3d(var(--shoe-x), var(--shoe-y), 0) rotate(-7deg); transition: transform .25s cubic-bezier(.2,.8,.2,1); will-change: transform; }
+
+/* Benefícios */
+.beneficios { position: relative; z-index: 4; margin-top: -1px; background: #000; color: #fff; padding: 0 0 48px; }
+.beneficios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.beneficio { padding: 24px; border: 1px solid rgba(255,255,255,.15); border-radius: 20px; transition: border-color .3s, background .3s, transform .3s; }
+.beneficio:hover { border-color: rgba(255,255,255,.38); background: rgba(255,255,255,.055); transform: translateY(-3px); }
+.beneficio b { display: block; margin-bottom: 4px; font-size: 15px; }
+.beneficio span { color: #a1a1a6; font-size: 13px; }
+
+/* Catálogo */
+section:not(.hero) { padding: 90px 0; }
+.section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 42px; }
+.section-head > div { max-width: 680px; }
+.kicker { margin: 0 0 10px; color: var(--accent); font-size: 14px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
+h2 { margin: 0; font-size: clamp(42px, 6vw, 72px); line-height: .98; letter-spacing: -.055em; font-weight: 700; }
+.section-head .intro { margin: 16px 0 0; color: var(--muted); font-size: 20px; letter-spacing: -.02em; }
+.filtros { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.filtros button { min-height: 38px; padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px; background: rgba(244,245,247,.72); color: #424245; font: 500 14px var(--font); cursor: pointer; transition: transform .25s cubic-bezier(.2,.8,.2,1), background .2s, color .2s, border-color .2s; }
+.filtros button:hover { border-color: #86868b; }
+.filtros button[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: #fff; }
+.filtros button.is-active-pop { animation: filterPop .36s cubic-bezier(.2,.8,.2,1); }
+.grade { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.card { min-width: 0; position: relative; display: flex; flex-direction: column; min-height: 510px; overflow: hidden; border-radius: var(--radius); background: var(--surface); padding: 34px; box-shadow: 0 1px 2px rgba(0,0,0,.02); transition: transform .35s ease, box-shadow .35s ease; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(0,0,0,.08); }
+.card .foto { flex: 1; min-height: 245px; display: grid; place-items: center; color: #1d1d1f; }
+.card .foto svg { width: 88%; max-width: 360px; transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.card:hover .foto svg { transform: rotate(-5deg) scale(1.06); }
+.card:nth-child(4n+2), .card:nth-child(4n+3) { background: #c7c9ce; }
+.card .tag { position: absolute; top: 26px; left: 26px; padding: 7px 12px; border-radius: 999px; background: #000; color: #fff; font-size: 12px; font-weight: 700; }
+.card h3 { margin: 0; font-size: 30px; line-height: 1.08; letter-spacing: -.04em; }
+.card p { margin: 7px 0 20px; color: var(--muted); font-size: 15px; }
+.preco { display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+.preco b { font-size: 20px; letter-spacing: -.025em; }
+.preco a { color: var(--accent); font-size: 15px; font-weight: 600; text-decoration: none; }
+.preco a::after { content: " →"; }
+.preco a:hover { text-decoration: underline; }
+.aviso { margin: 18px 0 0; color: var(--muted); font-size: 12px; }
+
+/* Loja */
+.loja { background: rgba(198, 201, 206, .9); border-block: 1px solid rgba(29, 29, 31, .08); }
+.duas { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.texto > p:last-child { max-width: 52ch; margin: 24px 0 0; color: var(--muted); font-size: 19px; }
+.numeros { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.numeros div { min-height: 180px; display: flex; flex-direction: column; justify-content: end; padding: 24px; border: 1px solid rgba(29,29,31,.06); border-radius: 22px; background: rgba(239, 240, 242, .78); }
+.numeros b { display: block; margin-bottom: 6px; font-size: 42px; line-height: 1; letter-spacing: -.05em; }
+.numeros span { color: var(--muted); font-size: 14px; }
+
+/* Contato */
+.contato { padding: 38px 0 !important; background: rgba(198, 201, 206, .9); }
+.contato-box { padding: 90px 32px; border-radius: 32px; background: #000; color: #fff; text-align: center; }
+.contato h2 { max-width: 800px; margin: 0 auto; }
+.contato p { max-width: 540px; margin: 20px auto 30px; color: #a1a1a6; font-size: 19px; }
+footer { background: rgba(198, 201, 206, .9); padding: 34px 0; color: #56565a; font-size: 13px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+.reveal-motion { opacity: 0; transform: translateY(34px) scale(.985); transition: opacity .75s ease, transform .75s cubic-bezier(.2,.8,.2,1); }
+.reveal-motion.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+@keyframes filterPop { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
+
+@media (max-width: 800px) {
+  .wrap { width: min(100% - 32px, 1180px); }
+  nav { gap: 18px; }
+  nav a:nth-child(2) { display: none; }
+  .hero { padding-top: 72px; }
+  .hero h1 { font-size: clamp(62px, 19vw, 110px); }
+  .hero .sub { max-width: 330px; }
+  .hero-art { width: 115vw; margin-left: -9vw; margin-bottom: -10%; }
+  .beneficios-grid, .grade, .duas { grid-template-columns: 1fr; }
+  .beneficios-grid { gap: 8px; }
+  section:not(.hero) { padding: 84px 0; }
+  .section-head { align-items: start; flex-direction: column; }
+  .grade { gap: 12px; }
+  .card { min-height: 450px; padding: 26px; border-radius: 24px; }
+  .duas { gap: 48px; }
+}
+@media (max-width: 470px) {
+  .marca span { display: none; }
+  nav { gap: 14px; }
+  .numeros { grid-template-columns: 1fr; }
+  .numeros div { min-height: 140px; }
+  .botoes { flex-direction: column; }
+  .btn { width: min(100%, 280px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+  body::before, .hero::after { transform: none !important; }
+  .reveal-motion { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tenis" viewBox="0 0 220 110">
+    <path d="M10 76V60q24-3 44-20l12-11q8-6 16 2l10 11q18 8 42 12 40 8 66 18v14q0 5-5 5H15q-5 0-5-5z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M10 74h200M78 46l-8 8M92 52l-8 8M106 57l-8 8M120 61l-8 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <path d="M14 86h192" stroke="currentColor" stroke-width="3" stroke-dasharray="3 6"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap barra">
+    <a class="marca" href="#topo" aria-label="PK Referência World, início">PK <span>Referência World</span></a>
+    <nav aria-label="Principal">
+      <a href="#catalogo">Tênis</a>
+      <a href="#loja">A loja</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero" aria-labelledby="titulo-principal">
+    <div class="wrap conteudo">
+      <p class="eyebrow">Originalidade em cada passo</p>
+      <h1 id="titulo-principal">PK <span>Referência.</span></h1>
+      <p class="sub">Os pares que definem o agora. Selecionados para quem não segue qualquer caminho.</p>
+      <div class="botoes">
+        <a class="btn" href="#catalogo">Explorar coleção</a>
+        <a class="btn vazado" href="#contato">Falar com a PK</a>
+      </div>
+      <svg class="hero-art" viewBox="0 0 220 110" role="img" aria-label="Ilustração de um tênis"><use href="#tenis"/></svg>
+    </div>
+  </section>
+
+  <div class="beneficios">
+    <div class="wrap beneficios-grid">
+      <div class="beneficio"><b>100% originais</b><span>Autenticidade em cada par.</span></div>
+      <div class="beneficio"><b>Envio para todo o Brasil</b><span>Seu próximo tênis vai até você.</span></div>
+      <div class="beneficio"><b>Atendimento direto</b><span>Escolha fácil pelo WhatsApp.</span></div>
+    </div>
+  </div>
+
+  <section id="catalogo" aria-labelledby="titulo-catalogo">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Coleção PK</p>
+          <h2 id="titulo-catalogo">Encontre o seu próximo par.</h2>
+          <p class="intro">Clássicos, lançamentos e escolhas que transformam qualquer look.</p>
+        </div>
+      </div>
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoria"></div>
+      <div class="grade" id="grade" aria-live="polite"></div>
+      <p class="aviso">Preços e modelos de exemplo. Edite a lista <code>produtos</code> no final do arquivo.</p>
+    </div>
+  </section>
+
+  <section class="loja" id="loja" aria-labelledby="titulo-loja">
+    <div class="wrap duas">
+      <div class="texto">
+        <p class="kicker">Sobre a PK</p>
+        <h2 id="titulo-loja">Curadoria para quem leva tênis a sério.</h2>
+        <p>A PK Referência World reúne modelos selecionados, pares originais e atendimento próximo — do primeiro “oi” à chegada da caixa.</p>
+      </div>
+      <div class="numeros" aria-label="Diferenciais da loja">
+        <div><b>100%</b><span>pares originais</span></div>
+        <div><b>34–46</b><span>numerações</span></div>
+        <div><b>1:1</b><span>atendimento no WhatsApp</span></div>
+        <div><b>BR</b><span>envio para todo o Brasil</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contato" id="contato" aria-labelledby="titulo-contato">
+    <div class="wrap contato-box">
+      <h2 id="titulo-contato">Seu próximo par começa aqui.</h2>
+      <p>Mande o modelo e o tamanho que você procura. A PK responde direto no WhatsApp.</p>
+      <a class="btn" id="zap" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> PK Referência World</span>
+    <span>@pkreferencia</span>
+  </div>
+</footer>
+
+<script>
+/* ====== EDITE AQUI ====== */
+const WHATSAPP = "5511961837866"; // DDI + DDD + número, só dígitos
+const produtos = [
+  {nome:"Street 90",      cat:"Casual",     desc:"Couro e sola alta",          preco:599, tag:"Novo"},
+  {nome:"Corrida Pro",    cat:"Corrida",    desc:"Amortecimento leve",         preco:749},
+  {nome:"Court Classic",  cat:"Casual",     desc:"Visual retrô de quadra",     preco:499},
+  {nome:"Flip Skate",     cat:"Skate",      desc:"Solado reforçado",           preco:459},
+  {nome:"Tempo Run",      cat:"Corrida",    desc:"Cabedal respirável",         preco:699, tag:"Novo"},
+  {nome:"Alto Preto",     cat:"Lançamento", desc:"Cano alto, edição limitada", preco:899, tag:"Drop"},
+  {nome:"Deck Low",       cat:"Skate",      desc:"Perfil baixo e firme",       preco:429},
+  {nome:"Referência One", cat:"Lançamento", desc:"Exclusivo da loja",          preco:979, tag:"Drop"}
+];
+/* ======================== */
+
+const grade = document.getElementById("grade");
+const filtros = document.getElementById("filtros");
+const brl = n => n.toLocaleString("pt-BR", {style:"currency", currency:"BRL", maximumFractionDigits:0});
+const zapLink = t => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(t);
+
+function desenha(cat) {
+  const lista = cat === "Todos" ? produtos : produtos.filter(p => p.cat === cat);
+  grade.innerHTML = lista.map(p => `
+    <article class="card">
+      ${p.tag ? `<span class="tag">${p.tag}</span>` : ""}
+      <div class="foto"><svg viewBox="0 0 220 110" role="img" aria-label="Tênis ${p.nome}"><use href="#tenis"/></svg></div>
+      <h3>${p.nome}</h3>
+      <p>${p.cat} · ${p.desc}</p>
+      <div class="preco"><b>${brl(p.preco)}</b>
+        <a href="${zapLink("Oi! Quero o tênis " + p.nome + ". Tem no meu tamanho?")}" target="_blank" rel="noopener" aria-label="Consultar ${p.nome} no WhatsApp">Quero esse</a>
+      </div>
+    </article>`).join("");
+}
+
+const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+function animaCards() {
+  if (reduzMovimento.matches) return;
+  grade.querySelectorAll(".card").forEach((card, index) => {
+    const animacao = card.animate([
+      {opacity: 0, transform: "translateY(26px) scale(.975)"},
+      {opacity: 1, transform: "translateY(0) scale(1)"}
+    ], {
+      duration: 520,
+      delay: index * 65,
+      easing: "cubic-bezier(.2,.8,.2,1)",
+      fill: "both"
+    });
+    animacao.finished.then(() => animacao.cancel()).catch(() => {});
+  });
+}
+
+let trocandoCategoria = false;
+async function trocaCategoria(cat) {
+  if (trocandoCategoria) return;
+  trocandoCategoria = true;
+  grade.setAttribute("aria-busy", "true");
+
+  if (!reduzMovimento.matches && grade.children.length) {
+    const saida = grade.animate([
+      {opacity: 1, transform: "translateY(0)"},
+      {opacity: 0, transform: "translateY(12px)"}
+    ], {duration: 170, easing: "ease-in", fill: "forwards"});
+    await saida.finished.catch(() => {});
+  }
+
+  desenha(cat);
+  grade.getAnimations().forEach(animacao => animacao.cancel());
+  animaCards();
+  grade.removeAttribute("aria-busy");
+  trocandoCategoria = false;
+}
+
+const cats = ["Todos", ...new Set(produtos.map(p => p.cat))];
+filtros.innerHTML = cats.map((c, i) => `<button type="button" aria-pressed="${i === 0}">${c}</button>`).join("");
+filtros.addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b || b.getAttribute("aria-pressed") === "true" || trocandoCategoria) return;
+  filtros.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  b.classList.remove("is-active-pop");
+  void b.offsetWidth;
+  b.classList.add("is-active-pop");
+  b.addEventListener("animationend", () => b.classList.remove("is-active-pop"), {once:true});
+  trocaCategoria(b.textContent);
+});
+desenha("Todos");
+animaCards();
+
+/* Luz interativa na área PK */
+const hero = document.querySelector(".hero");
+let heroFrame = 0;
+hero.addEventListener("pointermove", e => {
+  if (reduzMovimento.matches || e.pointerType === "touch") return;
+  const box = hero.getBoundingClientRect();
+  const x = Math.max(0, Math.min(1, (e.clientX - box.left) / box.width));
+  const y = Math.max(0, Math.min(1, (e.clientY - box.top) / box.height));
+  cancelAnimationFrame(heroFrame);
+  heroFrame = requestAnimationFrame(() => {
+    hero.style.setProperty("--light-x", `${x * 100}%`);
+    hero.style.setProperty("--light-y", `${y * 100}%`);
+    hero.style.setProperty("--shoe-x", `${(x - .5) * 18}px`);
+    hero.style.setProperty("--shoe-y", `${(y - .5) * 10}px`);
+  });
+});
+hero.addEventListener("pointerleave", () => {
+  hero.style.setProperty("--light-x", "50%");
+  hero.style.setProperty("--light-y", "28%");
+  hero.style.setProperty("--shoe-x", "0px");
+  hero.style.setProperty("--shoe-y", "0px");
+});
+
+/* Fundo e barra de progresso acompanhando o scroll */
+let scrollFrame = 0;
+function atualizaScroll() {
+  const limite = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+  const progresso = Math.min(1, Math.max(0, scrollY / limite));
+  document.documentElement.style.setProperty("--scroll-progress", progresso.toFixed(4));
+  document.documentElement.style.setProperty("--bg-shift", `${scrollY * -.08}px`);
+  document.documentElement.style.setProperty("--bg-rotate", `${progresso * 12}deg`);
+  document.documentElement.style.setProperty("--hero-shift", `${scrollY * .035}px`);
+  scrollFrame = 0;
+}
+addEventListener("scroll", () => {
+  if (!scrollFrame) scrollFrame = requestAnimationFrame(atualizaScroll);
+}, {passive:true});
+atualizaScroll();
+
+/* Entrada suave das seções */
+const elementosReveal = document.querySelectorAll(".section-head, .duas, .contato-box, .beneficio");
+if (reduzMovimento.matches || !("IntersectionObserver" in window)) {
+  elementosReveal.forEach(el => el.classList.add("is-visible"));
+} else {
+  elementosReveal.forEach(el => el.classList.add("reveal-motion"));
+  const observer = new IntersectionObserver(entradas => {
+    entradas.forEach(entrada => {
+      if (!entrada.isIntersecting) return;
+      entrada.target.classList.add("is-visible");
+      observer.unobserve(entrada.target);
+    });
+  }, {threshold:.16, rootMargin:"0px 0px -7%"});
+  elementosReveal.forEach(el => observer.observe(el));
+}
+
+document.getElementById("zap").href = zapLink("Oi! Vim pelo site da PK Referência.");
+document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
